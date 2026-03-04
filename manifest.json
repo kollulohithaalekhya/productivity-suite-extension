@@ -3,7 +3,7 @@
   "name": "Productivity Suite",
   "version": "1.0.0",
   "description": "A multi-feature productivity extension.",
-  "permissions": ["storage", "tabs", "scripting", "contextMenus"],
+  "permissions": ["storage", "tabs", "scripting", "contextMenus","downloads"],
   "host_permissions": ["<all_urls>"],
 
   "background": {

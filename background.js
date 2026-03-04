@@ -69,3 +69,46 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     }
   });
 });
+
+
+// ===============================
+// CONTEXT MENU
+// ===============================
+chrome.runtime.onInstalled.addListener(()=>{
+
+ chrome.contextMenus.create({
+   id:"save-selection",
+   title:"Save text as Note",
+   contexts:["selection"]
+ });
+
+});
+
+
+chrome.contextMenus.onClicked.addListener(
+ (info)=>{
+
+  if(info.menuItemId === "save-selection"){
+
+   const selectedText =
+     info.selectionText;
+
+   chrome.storage.local.get(
+    "notes",
+    (data)=>{
+
+     const oldNotes =
+       data.notes || "";
+
+     const updated =
+       oldNotes + "\n" + selectedText;
+
+     chrome.storage.local.set({
+       notes: updated
+     });
+
+   });
+
+  }
+
+});
