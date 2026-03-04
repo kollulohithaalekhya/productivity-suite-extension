@@ -38,6 +38,13 @@ A **production-ready multi-feature Chrome Extension** built with **Manifest V3, 
 * Right-click any webpage → **Add page URL to notes**
 * Automatically appends URL and title to saved notes
 
+### Save Selected Text
+
+* Highlight any text on a webpage
+* Right-click → **Save text as Note**
+* The selected text is automatically appended to stored notes
+* Enables quick note capture without opening the extension popup
+
 ### 6. Keyboard Shortcuts
 
 * **Ctrl + Shift + P** → Open popup
